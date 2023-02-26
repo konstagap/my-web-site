@@ -1,91 +1,54 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+/* eslint-disable react/no-unescaped-entities */
+import type { Metadata } from 'next';
+import { GitHubIcon, LinkedInIcon } from '@/components/icons';
 
-const inter = Inter({ subsets: ['latin'] })
+export const metadata: Metadata = {
+  title: 'Kostiantyn Agapov',
+  description: 'Software Engineer',
+  keywords: ['React', 'Next', 'Developer', 'Software Engineer', 'Ukraine', 'Support Ukraine'],
+};
 
-export default function Home() {
+export default function AboutPage() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <section className='prose pros-base'>
+      <h3 className='my-5 text-neutral-800 dark:text-neutral-200'>👋 Hi there, I'm Kostiantyn</h3>
+      <div className='prose prose-neutral dark:prose-invert text-neutral-800 dark:text-neutral-200'>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          I'm a software engineer with over 4 years of experience in web development. My primary skills are in
+          TypeScript and JavaScript with React ecosystem, but I also have experience in the backend with Node.js and
+          testing frameworks.
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+        <p>
+          I'm well-versed in Docker and Linux commands and am comfortable working in a variety of development
+          environments. In my free time, I enjoy exploring the outdoors and staying active. Hiking, soccer, and Formula
+          1 racing are some of my favorite hobbies.
+        </p>
+        <p>
+          Thanks for taking the time to learn a bit about me. If you have any questions or would like to chat further,
+          feel free to reach out!
+        </p>
+
+        <p>PS.</p>
+
+        <p>
+          This Project is build with React framework Next.js v13 utilizing server componets, and styled with Tailwind
+          CSS and Daisy UI lib.
+        </p>
+
+        {/* <hr /> */}
+        <div className='mb-5 flex flex-col items-center w-full gap-2 md:flex-row md:gap-2'>
+          <a rel='noopener noreferrer' target='_blank' href='https://www.linkedin.com/in/kostiantyn-agapov'>
+            <button className='btn btn-wide'>
+              <LinkedInIcon />
+            </button>
+          </a>
+          <a rel='noopener noreferrer' target='_blank' href='https://github.com/konstagap'>
+            <button className='btn btn-wide'>
+              <GitHubIcon />
+            </button>
           </a>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </section>
+  );
 }
