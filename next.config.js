@@ -1,15 +1,15 @@
 /** @type {import('next').NextConfig} */
 
-// const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
-// let basePath = '';
+let basePath = '';
 
-// if (isGithubActions) {
-//   basePath = `/my-web-site`;
-// }
+if (isGithubActions) {
+  basePath = `/my-web-site`;
+}
 
 const nextConfig = {
-  // basePath: basePath,
+  basePath: basePath,
   // distDir: 'build',
   experimental: {
     appDir: true,
