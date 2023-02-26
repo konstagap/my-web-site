@@ -28,13 +28,6 @@ export default function AboutPage() {
           feel free to reach out!
         </p>
 
-        <p>PS.</p>
-
-        <p>
-          This Project is build with React framework Next.js v13 utilizing server componets, and styled with Tailwind
-          CSS and Daisy UI lib.
-        </p>
-
         {/* <hr /> */}
         <div className='mb-5 flex flex-col items-center w-full gap-2 md:flex-row md:gap-2'>
           <a rel='noopener noreferrer' target='_blank' href='https://www.linkedin.com/in/kostiantyn-agapov'>

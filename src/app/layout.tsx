@@ -19,11 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en' className={`dark ${font.className}`}>
       <body>
         <div className='container mx-auto px-1 min-h-screen flex flex-col md:flex-row w-full'>
-          <aside className='mt-2 md:mt-20 md:basis-1/4'>
+          <aside className='mt-2 md:mt-12 md:basis-1/4'>
             <Side />
           </aside>
           <Divider />
-          <main className='md:mt-20 flex-1'>
+          <main className='md:mt-12 flex-1'>
             <div className='mx-6 mockup-code h-max'>
               <Greeting />
               <Tabs>{children}</Tabs>
