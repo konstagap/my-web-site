@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import me from '../img/test.png';
+import me from '@/img/test.png';
 import Link from 'next/link';
 
 const Avatar = () => {

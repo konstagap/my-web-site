@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { PostMetaData } from '../../lib/posts';
+import type { PostMetaData } from '@/lib/posts';
 import { ArrowIcon } from './icons';
 
 const PostPreview = ({ slug, summary, date, title }: PostMetaData) => {
