@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 const DemoPage = () => {
   return (
-    <div className='w-full h-screen dark flex justify-center items-center'>
-      <div className=' flex flex-col md:flex-row justify-center items-center gap-5 shadow-2xl p-10 rounded-lg '>
+    <div style={{ height: '100%', width: '100%' }}>
+      <div className=' flex flex-col md:flex-row justify-start items-center gap-5 shadow-2xl p-10 rounded-lg '>
         <div className='avatar'>
           <div className='w-48 mask mask-squircle '>
             <img src='/Kostiantyn_Agapov.png' />
