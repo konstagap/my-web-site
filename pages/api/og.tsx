@@ -8,8 +8,6 @@ export const config = {
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   let postTitle = searchParams.get('title') || 'San Diego, CA';
-  //remove all special chars, so @vercel/og can parse it right
-  postTitle = postTitle.replace(/[\W_]+/g, '');
 
   return new ImageResponse(
     (
