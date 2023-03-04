@@ -5,6 +5,17 @@ import { Metadata } from 'next/types';
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Articles and announcements',
+  openGraph: {
+    title: 'Blog | Kostiantyn Agapov',
+    description: 'Articles and announcements',
+    type: 'article',
+    url: 'https://findkostas.com/blog',
+    images: [
+      {
+        url: 'https://findkostas.com/api/og?title=Blog',
+      },
+    ],
+  },
 };
 
 const HomePage = () => {

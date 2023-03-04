@@ -2,12 +2,6 @@
 import type { Metadata } from 'next';
 import { GitHubIcon, LinkedInIcon } from '@/components/icons';
 
-export const metadata: Metadata = {
-  title: 'Kostiantyn Agapov',
-  description: 'Software Engineer',
-  keywords: ['React', 'Next', 'Developer', 'Software Engineer', 'Ukraine', 'Support Ukraine'],
-};
-
 export default function AboutPage() {
   return (
     <section className='prose pros-base'>
@@ -29,14 +23,19 @@ export default function AboutPage() {
         </p>
 
         {/* <hr /> */}
-        <div className='mb-5 flex flex-col items-center w-full gap-2 md:flex-row md:gap-2'>
-          <a rel='noopener noreferrer' target='_blank' href='https://www.linkedin.com/in/kostiantyn-agapov'>
-            <button className='btn btn-wide'>
+        <div className='mb-5 flex items-center w-full gap-2 md:gap-2'>
+          <a
+            className='flex-1'
+            rel='noopener noreferrer'
+            target='_blank'
+            href='https://www.linkedin.com/in/kostiantyn-agapov'
+          >
+            <button className='btn w-full md:btn-wide'>
               <LinkedInIcon />
             </button>
           </a>
-          <a rel='noopener noreferrer' target='_blank' href='https://github.com/konstagap'>
-            <button className='btn btn-wide'>
+          <a className='flex-1' rel='noopener noreferrer' target='_blank' href='https://github.com/konstagap'>
+            <button className='btn w-full md:btn-wide'>
               <GitHubIcon />
             </button>
           </a>

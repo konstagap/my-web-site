@@ -4,8 +4,19 @@ import type { Metadata } from 'next';
 import IconsMarquee from '@/components/IconsMarquee';
 
 export const metadata: Metadata = {
-  title: 'Qualification',
+  title: 'Skills',
   description: 'Experience and CV',
+  openGraph: {
+    title: 'Skills | Kostiantyn Agapov',
+    description: 'Experience and CV',
+    type: 'article',
+    url: 'https://findkostas.com/experience',
+    images: [
+      {
+        url: 'https://findkostas.com/api/og?title=Experience',
+      },
+    ],
+  },
 };
 
 export default function ExperiencePage() {

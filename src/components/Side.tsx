@@ -7,9 +7,12 @@ import QuoteOfTheDay from './QuoteOfTheDay';
 const Side = () => {
   return (
     <>
-      <Avatar />
-      <Name />
+      <div className='flex md:flex-col justify-around items-start md:items-center p-4 w-full'>
+        <Avatar />
+        <Name />
+      </div>
       <Contacts />
+
       <QuoteOfTheDay />
     </>
   );

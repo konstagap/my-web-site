@@ -7,6 +7,9 @@ export type PostMetaData = {
   date: string;
   summary: string;
   slug: string;
+  draft: boolean;
+  keywords: string;
+  description: string;
 };
 
 const folder = path.join(process.cwd(), 'src', 'posts');
@@ -24,6 +27,9 @@ const getPostsMetadata = (): PostMetaData[] => {
       date: matterResult.data.date,
       summary: matterResult.data.summary,
       slug: fileName.replace('.md', ''),
+      draft: matterResult.data.draft || true,
+      keywords: matterResult.data.summary || '',
+      description: matterResult.data.description || '',
     };
   });
 
