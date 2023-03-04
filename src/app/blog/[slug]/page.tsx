@@ -22,8 +22,7 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
   if (!post) return;
 
   const { title, date: publishedTime, summary, description, slug, keywords } = post;
-  const ogImage = `https://findkostas.com/api/og?title=${title}`;
-
+  const ogImage = encodeURI(`https://findkostas.com/api/og?title=${title}`);
   const meta: Metadata = {
     title,
     description,
