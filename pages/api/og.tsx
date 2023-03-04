@@ -11,15 +11,13 @@ export default async function handler(req: NextRequest) {
 
   return new ImageResponse(
     (
-      <div tw='flex flex-col w-full h-full items-center justify-center bg-slate-800 px-30'>
-        <div tw='bg-slate-900 flex w-full rounded-xl shadow-xl overflow-hidden'>
-          <div tw='flex'>
-            <img tw='w-78 h-78 rounded-tl-xl rounded-bl-xl' src='https://www.findkostas.com/Kostiantyn_Agapov.png' />
-            <div tw='flex flex-col flex-wrap ml-10 mt-8 '>
-              <h1 tw='text-slate-300 text-7xl '>Kostiantyn Agapov</h1>
-              <p tw='text-slate-400 text-5xl'> Software Engineer </p>
-              <small tw='text-slate-500 text-3xl'>{postTitle}</small>
-            </div>
+      <div tw='bg-slate-900 flex items-center w-full w-full h-full px-20 overflow-hidden'>
+        <div tw='flex'>
+          <img tw='w-140 h-140 rounded-full' src='https://www.findkostas.com/Kostiantyn_Agapov.png' />
+          <div tw='flex flex-col flex-wrap ml-10 pl-10  border-l-2 border-slate-400 '>
+            <h1 tw='text-slate-300 text-8xl mt-8 '>Kostiantyn Agapov</h1>
+            <p tw='text-slate-400 text-5xl mb-30'> Software Engineer </p>
+            <small tw='text-slate-500 text-5xl'>{postTitle}</small>
           </div>
         </div>
       </div>
