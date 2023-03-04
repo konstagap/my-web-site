@@ -1,5 +1,5 @@
 ---
-title: '💙💛 Stand with Ukraine'
+title: 'Stand with Ukraine'
 date: '2022-02-25'
 tags: ['helpUkraine']
 draft: false
