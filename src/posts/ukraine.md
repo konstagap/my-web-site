@@ -4,6 +4,8 @@ date: '2022-02-25'
 tags: ['helpUkraine']
 draft: false
 summary: 'Russian invasion of Ukraine. Help Ukraine to defeat Russia'
+keywords: 'Ukraine, StandWIthUkraine, StopWar'
+description: 'Kostiantyn Agapov calls on support for Ukraine'
 ---
 
 # Ukraine's Fight for Freedom and Democracy

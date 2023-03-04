@@ -18,6 +18,17 @@ import clickImg from '@/img/myCollection/click.png';
 export const metadata: Metadata = {
   title: 'Projects',
   description: 'Pet projects',
+  openGraph: {
+    title: 'Projects | Kostiantyn Agapov',
+    description: 'Pet projects',
+    type: 'article',
+    url: 'https://findkostas.com/projects',
+    images: [
+      {
+        url: 'https://findkostas.com/api/og?title=Projects',
+      },
+    ],
+  },
 };
 
 export default function ProjectsPage() {

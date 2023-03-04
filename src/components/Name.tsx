@@ -2,9 +2,10 @@ import React from 'react';
 
 const Name = () => {
   return (
-    <div className='prose prose-base text-center'>
+    <div className='prose md:prose-base prose-sm prose-h1:text-[24px] text-right md:text-center'>
       <h1>Kostiantyn Agapov</h1>
-      <h3>Software Engineer</h3>
+      <p>Software Engineer</p>
+      <p className='block md:hidden'>📍 San Diego, CA</p>
     </div>
   );
 };

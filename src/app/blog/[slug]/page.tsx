@@ -3,16 +3,10 @@ import Markdown from 'markdown-to-jsx';
 import { Metadata } from 'next/types';
 import React from 'react';
 
-type Props = {
+type BlogPostProps = {
   params: {
     slug: string;
   };
-};
-
-export const metadata: Metadata = {
-  title: 'Support Ukraine',
-  description: 'Kostiantyn Agapov calls on support for Ukraine',
-  keywords: ['Ukraine', 'StandWIthUkraine', 'StopWar'],
 };
 
 export const generateStaticParams = async () => {
@@ -22,7 +16,48 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const BlogPost = ({ params }: Props) => {
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata | undefined> {
+  const posts = getPostsMetadata();
+  const post = posts.find(post => post.slug === params.slug);
+  if (!post) return;
+
+  const { title, date: publishedTime, summary, description, slug, keywords } = post;
+  const ogImage = `https://findkostas.com/api/og?title=${title}`;
+
+  const meta: Metadata = {
+    title,
+    description,
+    openGraph: {
+      title,
+      description: summary,
+      type: 'article',
+      publishedTime,
+      url: `https://findkostas.com/blog/${slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+
+  if (keywords) {
+    try {
+      const mKeywords = keywords.split(',');
+      meta.keywords = mKeywords;
+    } catch (e: any) {}
+  }
+
+  return meta;
+}
+
+const BlogPost = ({ params }: BlogPostProps) => {
   const slug = params.slug;
   const post = getPostContent(slug);
   return (
