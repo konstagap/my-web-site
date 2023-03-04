@@ -22,7 +22,7 @@ const DemoPage = () => {
     <div style={{ height: '100%', width: '100%' }}>
       <div className=' flex flex-col md:flex-row justify-start items-center gap-5 shadow-2xl p-10 rounded-lg '>
         <div className='avatar'>
-          <div className='w-48 mask mask-squircle '>
+          <div className='w-48 mask mask-squircle'>
             <img src='/Kostiantyn_Agapov.png' />
           </div>
         </div>

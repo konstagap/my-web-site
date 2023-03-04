@@ -7,27 +7,26 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   const { searchParams } = req.nextUrl;
-  const postTitle = searchParams.get('title');
+  const postTitle = searchParams.get('title') || 'San Diego, CA';
 
   return new ImageResponse(
     (
-      <div style={{ height: '100%', width: '100%' }}>
-        <div tw='flex flex-col md:flex-row justify-start items-center gap-5 shadow-2xl p-10 rounded-lg'>
-          <div tw='avatar'>
-            <div tw='w-48 mask mask-squircle '>
-              <img src='/Kostiantyn_Agapov.png' />
+      <div tw='flex flex-col w-full h-full items-center justify-center bg-slate-800 px-4 '>
+        <div tw='bg-slate-900 flex w-full rounded-xl shadow-xl max-w-4xl overflow-hidden'>
+          <div tw='flex'>
+            <img tw='w-36 h-36 rounded-tl-xl rounded-bl-xl' src='https://www.findkostas.com/Kostiantyn_Agapov.png' />
+            <div tw='flex flex-col ml-6 '>
+              <h1 tw='text-slate-300 text-2xl mb-0'>Kostiantyn Agapov</h1>
+              <p tw='text-slate-400'> Software Engineer </p>
+              <small tw='text-slate-500'>{postTitle}</small>
             </div>
-          </div>
-          <div>
-            <h1 tw='text-5xl font-bold'>Kostiantyn Agapov</h1>
-            <p tw='py-4'>Software Engineer</p>
           </div>
         </div>
       </div>
     ),
     {
-      width: 1920,
-      height: 1080,
+      width: 800,
+      height: 400,
     }
   );
 }
