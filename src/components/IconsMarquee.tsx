@@ -54,10 +54,10 @@ const skills = [
 function IconsMarquee() {
   return (
     <div className='relative flex overflow-x-hidden'>
-      <div className='py-12 animate-marquee whitespace-nowrap'>
+      <div className='mt-4 animate-marquee whitespace-nowrap'>
         {skills.map((skill, ind) => {
           return (
-            <span key={ind} className='mx-4'>
+            <span key={ind} className='mx-4 highlight cursor-default'>
               {skill}
             </span>
           );

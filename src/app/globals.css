@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.linkedIn,
+.highlight {
+  transition: linear 0.1s;
+}
+
+.linkedIn:hover {
+  color: #0288d1;
+}
+
+.highlight:hover {
+  color: beige;
+}
