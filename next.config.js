@@ -11,12 +11,10 @@ if (isGithubActions) {
 const nextConfig = {
   basePath: basePath,
   images: {
-    formats: ['image/avif', 'image/webp'],
-    // Twitter Profile Picture
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'pbs.twimg.com',
+        hostname: 'theysaidso.com',
         pathname: '/**',
       },
     ],

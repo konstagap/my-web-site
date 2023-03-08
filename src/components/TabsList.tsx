@@ -23,6 +23,9 @@ const TabsList = () => {
     '/blog': {
       title: 'Blog',
     },
+    '/quotes': {
+      title: 'Quote of the day',
+    },
   };
 
   return (
