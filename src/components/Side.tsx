@@ -12,7 +12,6 @@ const Side = () => {
         <Name />
       </div>
       <Contacts />
-
       <QuoteOfTheDay />
     </>
   );
