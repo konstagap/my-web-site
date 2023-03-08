@@ -28,17 +28,10 @@ const defaultQuote = {
 };
 
 async function getQuote(): Promise<TQuote> {
-  try {
-    const res = await fetch('http://quotes.rest/quote/random.json?category=inspire&language=en', {
-      next: { revalidate: 60 * 60 },
-    });
-    if (!res.ok) return defaultQuote;
-
-    const resp: TQuoteResp = await res.json();
-    return resp.contents.quotes[0];
-  } catch (error) {
-    return defaultQuote;
-  }
+  const res = await fetch('http://quotes.rest/qod.json?category=inspire', { next: { revalidate: 60 * 60 } });
+  if (!res.ok) return defaultQuote;
+  const resp: TQuoteResp = await res.json();
+  return resp.contents.quotes[0];
 }
 
 export default async function QuotePage() {
@@ -61,7 +54,7 @@ export default async function QuotePage() {
               d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
             />
           </svg>
-          <span>Check back every hour for a new awesome quote!✌️</span>
+          <span>You are up to date! Check back tomorrow for a new awesome quote!✌️</span>
         </div>
       </div>
       <div className=' py-10 px-5 flex flex-wrap flex-col lg:flex-row gap-5 lg:justify-around min-h-fit bg-base-200 rounded-md'>
@@ -75,8 +68,14 @@ export default async function QuotePage() {
             <span className='text-right block'>{quote.author}</span>
             <br />
             {quote.permalink ? (
-              <a href={quote.permalink} rel='noopener noreferrer' target='_blank'>
-                {quote.permalink}
+              <a
+                href={quote.permalink}
+                title='Powered by quotes from theysaidso.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                className='text-right block text-xs'
+              >
+                They Said So®
               </a>
             ) : null}
           </blockquote>
