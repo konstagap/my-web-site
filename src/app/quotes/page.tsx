@@ -14,6 +14,7 @@ type TQuote = {
 };
 
 type TQuoteResp = {
+  error: any;
   contents: {
     quotes: TQuote[];
   };
@@ -31,6 +32,8 @@ async function getQuote(): Promise<TQuote> {
   const res = await fetch('http://quotes.rest/qod.json?category=inspire', { next: { revalidate: 60 * 60 } });
   if (!res.ok) return defaultQuote;
   const resp: TQuoteResp = await res.json();
+  // to many request, limit reached
+  if (resp.error) return defaultQuote;
   return resp.contents.quotes[0];
 }
 

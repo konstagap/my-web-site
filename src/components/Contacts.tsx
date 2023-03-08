@@ -31,22 +31,32 @@ const Contacts = () => {
 
       <div className='hidden md:block'>
         <div className='flex gap-6 w-full justify-center mb-6'>
-          <a href='tel:+19292945554'>
+          <a href='tel:+19292945554' title='(929)-294-5554'>
             <PhoneIcon />
             {/* <span>+1 (929) 294-5554</span> */}
           </a>
-          <a href='mailto:konstagapov123@gmail.com'>
+          <a href='mailto:konstagapov123@gmail.com' title='konstagapov123@gmail.com'>
             <EmailIcon />
           </a>
-          <a rel='noopener noreferrer' target='_blank' href='https://github.com/konstagap'>
+          <a
+            rel='noopener noreferrer'
+            target='_blank'
+            href='https://github.com/konstagap'
+            title='https://github.com/konstagap'
+          >
             <GitHubIcon />
           </a>
 
-          <a rel='noopener noreferrer' target='_blank' href='https://www.linkedin.com/in/kostiantyn-agapov'>
+          <a
+            rel='noopener noreferrer'
+            target='_blank'
+            href='https://www.linkedin.com/in/kostiantyn-agapov'
+            title='https://www.linkedin.com/in/kostiantyn-agapov'
+          >
             <LinkedInIcon />
           </a>
 
-          <Link href='/cv/Kostiantyn_Agapov_cv.pdf' download>
+          <Link href='/cv/Kostiantyn_Agapov_cv.pdf' title='Kostiantyn_Agapov_cv.pdf' download>
             <DownloadIcon />
           </Link>
         </div>
