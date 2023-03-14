@@ -42,7 +42,7 @@ export default async function QuotePage() {
 
   return (
     <div>
-      <div className='alert rounded-md mb-1 '>
+      <div className='alert rounded-md mb-1'>
         <div>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -60,8 +60,8 @@ export default async function QuotePage() {
           <span>You are up to date! Check back tomorrow for a new awesome quote!✌️</span>
         </div>
       </div>
-      <div className=' py-10 px-5 flex flex-wrap flex-col lg:flex-row gap-5 lg:justify-around min-h-fit bg-base-200 rounded-md'>
-        <div className='prose prose-base'>
+      <div className='py-10 flex flex-wrap flex-col lg:flex-row gap-5 lg:justify-around min-h-fit rounded-md'>
+        <div className='prose prose-sm md:max-w-sm'>
           <blockquote cite={quote.title}>
             {quote.quote.split('\n').map((el, i) => (
               <p className='m-0' key={i}>

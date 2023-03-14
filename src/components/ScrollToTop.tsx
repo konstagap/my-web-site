@@ -29,7 +29,10 @@ export const ScrollToTop = () => {
 
   return (
     <div className='fixed bottom-5 right-5'>
-      <button onClick={scrollToTop} className={`${isVisible ? 'opacity-100' : 'opacity-0'} btn btn-secondary `}>
+      <button
+        onClick={scrollToTop}
+        className={`${isVisible ? 'opacity-100' : 'opacity-0'} btn btn-circle btn-primary `}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'

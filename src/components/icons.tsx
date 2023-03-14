@@ -19,7 +19,7 @@ export function TwitterIcon() {
 export function GitHubIcon() {
   return (
     <svg
-      className='highlight'
+      className='dark:highlight'
       width='20'
       height='20'
       viewBox='0 0 24 24'
@@ -58,7 +58,7 @@ export function ViewsIcon() {
 export function ArrowIcon() {
   return (
     <svg
-      className='mr-2 highlight'
+      className='mr-2 dark:highlight'
       width='12'
       height='12'
       viewBox='0 0 12 12'
@@ -112,7 +112,7 @@ export function PhoneIcon() {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       fill='currentColor'
-      className='highlight'
+      className='dark:highlight'
       width='18px'
       height='18px'
       viewBox='0 0 16 16'
@@ -125,7 +125,7 @@ export function PhoneIcon() {
 export function EmailIcon() {
   return (
     <svg
-      className='highlight'
+      className='dark:highlight'
       xmlns='http://www.w3.org/2000/svg'
       x='0px'
       y='0px'
@@ -144,13 +144,47 @@ export function DownloadIcon() {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       fill='currentColor'
-      className='highlight'
+      className='dark:highlight'
       width='24px'
       height='20px'
       viewBox='0 0 16 16'
     >
       <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
       <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z' />
+    </svg>
+  );
+}
+
+export function SunIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 20 20'
+      fill='currentColor'
+      width='24px'
+      height='20px'
+      className='text-gray-900 dark:text-gray-100'
+    >
+      <path d='M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z' />
+    </svg>
+  );
+}
+
+export function MoonIcon() {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 20 20'
+      fill='currentColor'
+      width='24px'
+      height='20px'
+      className='text-gray-900 dark:text-gray-100'
+    >
+      <path
+        fillRule='evenodd'
+        d='M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z'
+        clipRule='evenodd'
+      />
     </svg>
   );
 }

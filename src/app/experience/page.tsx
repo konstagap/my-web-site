@@ -26,7 +26,7 @@ export default function ExperiencePage() {
 
       <DowloadResume />
 
-      <article>
+      <div>
         <div className='flex w-full justify-between'>
           <p>November 2022</p>
           <h4>Intuit</h4>
@@ -42,9 +42,9 @@ export default function ExperiencePage() {
           <li>Collaborated with cross-functional teams to ensure seamless integration of new technology stack.</li>
           <li>Developed and maintained technical documentation for software projects.</li>
         </ul>
-      </article>
+      </div>
 
-      <article>
+      <div>
         <div className='flex w-full justify-between'>
           <p>May 2021 - November 2022</p>
           <h4>LexisNexis Risk Solutions</h4>
@@ -70,9 +70,9 @@ export default function ExperiencePage() {
           <li>Utilize Microsoft Verifiable Credentials for issuance and verification of digital credentials.</li>
           <li>Implement custom themes, refactor legacy code, and work with browser APIs to persist session data.</li>
         </ul>
-      </article>
+      </div>
 
-      <article>
+      <div>
         <div className='flex w-full justify-between'>
           <p>September 2019 - May 2021</p>
           <h4>CSI WORKS</h4>
@@ -90,7 +90,7 @@ export default function ExperiencePage() {
           <li>Translate design wireframes into functional, cross-platform code.</li>
           <li>Write unit tests using Jest and React Testing Library.</li>
         </ul>
-      </article>
+      </div>
     </section>
   );
 }

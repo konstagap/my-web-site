@@ -5,11 +5,7 @@ import { ArrowIcon } from './icons';
 const PostPreview = ({ slug, summary, date, title }: PostMetaData) => {
   return (
     <Link href={`/blog/${slug}`}>
-      <div
-        className='border border-slate-300 p-4 rounded-md shadow-sm
-
-  '
-      >
+      <div className='border border-slate-300 py-1 px-5 rounded-md shadow-sm'>
         <time className='block text-right'>{new Date(date).toDateString()}</time>
         <p className='flex w-full items-center gap-5'>
           {title}

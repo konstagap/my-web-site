@@ -15,7 +15,7 @@ const TabsList = () => {
       title: 'About Me',
     },
     '/experience': {
-      title: 'Experience',
+      title: 'Skills',
     },
     '/projects': {
       title: 'Projects',
