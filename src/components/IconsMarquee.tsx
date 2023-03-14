@@ -57,7 +57,7 @@ function IconsMarquee() {
       <div className='mt-4 animate-marquee whitespace-nowrap'>
         {skills.map((skill, ind) => {
           return (
-            <span key={ind} className='mx-4 highlight cursor-default'>
+            <span key={ind} className='mx-4 dark:highlight cursor-default'>
               {skill}
             </span>
           );

@@ -6,6 +6,9 @@ import Divider from '@/components/Divider';
 import Tabs from '@/components/TabsSection';
 import Greeting from '@/components/Greeting';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import Provider from '@/components/Provider';
+import Paper from '@/components/Paper';
+import ThemeSwitch from '@/components/ThemeSwitch';
 
 const font = Roboto({ weight: ['300', '400', '500'], display: 'swap', subsets: ['latin'] });
 
@@ -66,21 +69,28 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className={`dark ${font.className}`}>
+    <html lang='en' className={`${font.className}`}>
       <body>
-        <div className='container mx-auto px-1 min-h-screen flex flex-col md:flex-row w-full'>
-          <aside className='mt-2 md:mt-12 md:basis-1/4'>
-            <Side />
-          </aside>
-          <Divider />
-          <main className='md:mt-12 flex-1'>
-            <div className='mx-2 md:mx-6 mockup-code h-max'>
-              <Greeting />
-              <Tabs>{children}</Tabs>
-              <ScrollToTop />
-            </div>
-          </main>
-        </div>
+        <Provider>
+          <div className='container mx-auto px-1 min-h-screen flex flex-col md:flex-row w-full'>
+            <aside className='mt-2 md:mt-12 md:basis-1/4'>
+              <Side />
+              <div className='hidden md:block'>
+                <ThemeSwitch />
+              </div>
+            </aside>
+            <Divider />
+            <main className='md:mt-12 mx-2 md:mx-6 flex-1'>
+              <div className='mb-1 mockup-code'>
+                <Greeting />
+              </div>
+              <Paper>
+                <Tabs>{children}</Tabs>
+                <ScrollToTop />
+              </Paper>
+            </main>
+          </div>
+        </Provider>
       </body>
     </html>
   );

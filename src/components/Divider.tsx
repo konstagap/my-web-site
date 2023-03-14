@@ -1,48 +1,15 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import ThemeSwitch from './ThemeSwitch';
 
 const Divider = () => {
-  const list = [
-    'js',
-    'ts',
-    'jsx',
-    'tsx',
-    'html',
-    'css',
-    'react',
-    'node',
-    'git',
-    'docker',
-    'linux',
-    'testing',
-    'etc.',
-    '...',
-    '😊',
-    "(●'◡'●)",
-    'Next.js',
-    'Express',
-    'Nest',
-  ];
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex(prev => {
-        if (prev === list.length - 1) {
-          return 0;
-        } else {
-          return prev + 1;
-        }
-      });
-    }, 855);
-
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <div className='divider md:divider-horizontal divider-vertical'>
-      <div className='p-1 animate-bounce'>{list[index].toUpperCase()} </div>
-    </div>
+    <span className='divider md:divider-horizontal divider-vertical'>
+      <div className='hidden md:block'>JS</div>
+      <div className='block md:hidden'>
+        <ThemeSwitch />
+      </div>
+    </span>
   );
 };
 

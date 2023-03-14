@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       animation: {
@@ -17,13 +17,12 @@ module.exports = {
   },
   daisyui: {
     styled: true,
-    themes: ['dark', 'corporate'],
     base: true,
     utils: true,
     logs: true,
     rtl: false,
     prefix: '',
-    darkTheme: 'dark',
+    themes: ['light', 'dark'],
   },
   plugins: [
     require('tailwind-typewriter')({
