@@ -5,7 +5,7 @@ import { Post } from '.contentlayer/generated/types';
 const PostPreview = ({ slug, summary, date, title, tags }: Post) => {
   return (
     <Link
-      className='p-2 highlight shadow-sm prose prose-sm block border-slate-600 border-b first-of-type:border-t mb-2 lg:w-2/3'
+      className='p-2 shadow-sm prose prose-sm block border-slate-600 border-b first-of-type:border-t mb-2 lg:w-2/3'
       href={`/blog/${slug}`}
     >
       <p className='flex w-full items-center'>
