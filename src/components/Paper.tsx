@@ -12,7 +12,7 @@ function Paper({ children, className }: Props) {
         className ? className : ''
       }`}
     >
-      <div className=''>{children}</div>
+      <div>{children}</div>
     </div>
   );
 }

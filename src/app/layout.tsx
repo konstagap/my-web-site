@@ -3,12 +3,12 @@ import { Roboto } from 'next/font/google';
 
 import Side from '@/components/Side';
 import Divider from '@/components/Divider';
-import Tabs from '@/components/TabsSection';
 import Greeting from '@/components/Greeting';
 import { ScrollToTop } from '@/components/ScrollToTop';
 import Provider from '@/components/Provider';
 import Paper from '@/components/Paper';
 import ThemeSwitch from '@/components/ThemeSwitch';
+import TabsList from '@/components/TabsList';
 
 const font = Roboto({ weight: ['300', '400', '500'], display: 'swap', subsets: ['latin'] });
 
@@ -85,7 +85,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Greeting />
               </div>
               <Paper>
-                <Tabs>{children}</Tabs>
+                <TabsList />
+                <section>{children}</section>
                 <ScrollToTop />
               </Paper>
             </main>
