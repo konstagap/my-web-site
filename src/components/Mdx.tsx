@@ -68,8 +68,86 @@ function ConsCard({ title, cons }: { title: string; cons: string[] }) {
   );
 }
 
+function Callout(props: any) {
+  return (
+    <div className='flex bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 my-8'>
+      <div className='flex items-center w-4 mr-4'>{props.emoji}</div>
+      <div className='w-full callout'>{props.children}</div>
+    </div>
+  );
+}
+
 function RoundedImage(props: any) {
-  return <Image alt='' className='rounded-lg' {...props} />;
+  return <Image alt='' className='rounded-lg mx-auto' {...props} />;
+}
+
+type CarouselImage = {
+  id: string;
+  img: React.ComponentPropsWithoutRef<typeof Image>;
+};
+
+type CarouselProps = {
+  images: CarouselImage[];
+};
+
+function Carousel2({ images }: CarouselProps) {
+  return (
+    <>
+      <div className='carousel w-full'>
+        {images.map((el, index, arr) => {
+          return (
+            <div key={el.id} id={el.id} className='carousel-item w-full'>
+              <Image className='object-cover mx-auto rounded-md' {...el.img} />
+            </div>
+          );
+        })}
+      </div>
+
+      <div className='flex justify-center w-full py-2 gap-2'>
+        {images.map((el, index) => {
+          return (
+            <a key={'#' + el.id} href={'#' + el.id} className='btn btn-xs'>
+              {index + 1}
+            </a>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+function Carousel({ images }: CarouselProps) {
+  return (
+    <div className='carousel w-full'>
+      {images.map((el, index, arr) => {
+        const isFirst = index === 0;
+        const isLast = index === arr.length - 1;
+
+        const nextId = arr[index + 1]?.id;
+        const prevId = arr[index - 1]?.id;
+
+        return (
+          <div key={el.id} id={el.id} className='carousel-item relative w-full '>
+            <Image className='object-cover mx-auto rounded-md' {...el.img} />
+            <div className='absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2'>
+              <a
+                href={'#' + prevId}
+                className={`btn btn-accent md:opacity-60 md:hover:opacity-100 btn-circle ${isFirst ? 'invisible' : ''}`}
+              >
+                ❮
+              </a>
+              <a
+                href={'#' + nextId}
+                className={`btn btn-accent md:opacity-60 md:hover:opacity-100 btn-circle ${isLast ? 'invisible' : ''}`}
+              >
+                ❯
+              </a>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 const components = {
@@ -77,6 +155,9 @@ const components = {
   a: CustomLink,
   ProsCard,
   ConsCard,
+  Callout,
+  Carousel,
+  Carousel2,
 };
 
 interface MdxProps {
@@ -87,7 +168,7 @@ export function Mdx({ code }: MdxProps) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className='prose prose-quoteless prose-neutral dark:prose-invert'>
+    <article>
       <Component components={{ ...components }} />
     </article>
   );

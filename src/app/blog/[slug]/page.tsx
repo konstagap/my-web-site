@@ -55,7 +55,7 @@ const BlogPost = ({ params }: BlogPostProps) => {
   if (!post) notFound();
 
   return (
-    <section className='prose prose-sm'>
+    <section className='prose prose-sm prose-quoteless dark:prose-invert'>
       <Balancer>
         <h1>{post.title}</h1>
         <time>{new Date(post.date).toDateString()}</time>
