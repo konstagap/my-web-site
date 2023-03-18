@@ -1,7 +1,11 @@
-import { getPostContent, getPostsMetadata } from '@/lib/posts';
-import Markdown from 'markdown-to-jsx';
+import { notFound } from 'next/navigation';
+import { Mdx } from '@/components/Mdx';
+import { allPosts } from 'contentlayer/generated';
+import Balancer from 'react-wrap-balancer';
 import { Metadata } from 'next/types';
 import React from 'react';
+import { formatRelative, subDays } from 'date-fns';
+import BackButton from '@/components/BackButton';
 
 type BlogPostProps = {
   params: {
@@ -9,23 +13,20 @@ type BlogPostProps = {
   };
 };
 
-export const generateStaticParams = async () => {
-  const posts = getPostsMetadata();
-  return posts.map(post => ({
-    slug: post.slug,
-  }));
-};
+export async function generateStaticParams() {
+  return allPosts.map(post => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata | undefined> {
-  const posts = getPostsMetadata();
-  const post = posts.find(post => post.slug === params.slug);
+  const post = allPosts.find(post => post.slug === params.slug);
   if (!post) return;
 
-  const { title, date: publishedTime, summary, description, slug, keywords } = post;
+  const { title, date: publishedTime, summary, description, slug, tags } = post;
   const ogImage = encodeURI(`https://findkostas.com/api/og?title=${title}`);
   const meta: Metadata = {
     title,
     description,
+    keywords: tags || [],
     openGraph: {
       title,
       description: summary,
@@ -46,27 +47,21 @@ export async function generateMetadata({ params }: BlogPostProps): Promise<Metad
     },
   };
 
-  if (keywords) {
-    try {
-      const mKeywords = keywords.split(',');
-      meta.keywords = mKeywords;
-    } catch (e: any) {}
-  }
-
   return meta;
 }
 
 const BlogPost = ({ params }: BlogPostProps) => {
-  const slug = params.slug;
-  const post = getPostContent(slug);
+  const post = allPosts.find(post => post.slug === params.slug);
+  if (!post) notFound();
+
   return (
-    <article className='prose prose-base'>
-      <div className='my-12 text-center'>
-        <h1>{post.data.title}</h1>
-        <time>{new Date(post.data.date).toDateString()}</time>
-      </div>
-      <Markdown>{post.content}</Markdown>
-    </article>
+    <section className='prose prose-sm'>
+      <Balancer>
+        <h1>{post.title}</h1>
+        <time>{new Date(post.date).toDateString()}</time>
+        <Mdx code={post.body.code} />
+      </Balancer>
+    </section>
   );
 };
 

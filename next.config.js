@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+const { withContentlayer } = require('next-contentlayer');
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
 
@@ -8,6 +8,7 @@ if (isGithubActions) {
   basePath = `/my-web-site`;
 }
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: basePath,
   images: {
@@ -81,4 +82,4 @@ const securityHeaders = [
   },
 ];
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);

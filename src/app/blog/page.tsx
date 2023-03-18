@@ -1,6 +1,8 @@
-import { getPostsMetadata } from '@/lib/posts';
 import PostPreview from '@/components/PostPreview';
 import { Metadata } from 'next/types';
+
+import { compareDesc } from 'date-fns';
+import { allPosts } from 'contentlayer/generated';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -19,12 +21,14 @@ export const metadata: Metadata = {
 };
 
 const HomePage = () => {
-  const postMetadata = getPostsMetadata();
+  const posts = allPosts.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
 
   return (
     <div>
-      {postMetadata.map(post => (
-        <PostPreview key={post.slug} {...post} />
+      {posts.map(post => (
+        <PostPreview key={post._id} {...post} />
       ))}
     </div>
   );
