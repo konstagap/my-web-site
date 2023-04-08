@@ -142,7 +142,7 @@ export default function ProjectsPage() {
       {projects.map(project => {
         return (
           <div key={project.name} className='card w-96 bg-base-100 shadow-xl'>
-            <figure>
+            <figure className='m-0'>
               <Image
                 src={project.img}
                 alt={project.name}
@@ -154,11 +154,11 @@ export default function ProjectsPage() {
               <h2 className='card-title'>{project.name}</h2>
               <p>{project.summary}</p>
               <div className='card-actions justify-start flex items-center'>
-                <a className='btn basis-10' rel='noopener noreferrer' target='_blank' href={project.gh}>
+                <a className='btn btn-outline basis-10' rel='noopener noreferrer' target='_blank' href={project.gh}>
                   <GitHubIcon />
                 </a>
                 <a
-                  className='btn btn-outline flex gap-2 items-center'
+                  className='btn btn-ghost flex gap-2 items-center'
                   rel='noopener noreferrer'
                   target='_blank'
                   href={project.deployed}
