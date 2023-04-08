@@ -3,8 +3,6 @@ import Image, { StaticImageData } from 'next/image';
 
 import defaultImg from '@/img/default-bg.jpg';
 
-type Props = {};
-
 type TQuote = {
   quote: string;
   author: string;
@@ -29,12 +27,16 @@ const defaultQuote = {
 };
 
 async function getQuote(): Promise<TQuote> {
-  const res = await fetch('http://quotes.rest/qod.json?category=inspire', { next: { revalidate: 60 * 60 } });
-  if (!res.ok) return defaultQuote;
-  const resp: TQuoteResp = await res.json();
-  // to many request, limit reached
-  if (resp.error) return defaultQuote;
-  return resp.contents.quotes[0];
+  try {
+    const res = await fetch('http://quotes.rest/qod.json?category=inspire', { next: { revalidate: 60 * 60 } });
+    if (!res.ok) return defaultQuote;
+    const resp: TQuoteResp = await res.json();
+    // to many request, limit reached
+    if (resp.error) return defaultQuote;
+    return resp.contents.quotes[0];
+  } catch (error) {
+    return defaultQuote;
+  }
 }
 
 export default async function QuotePage() {

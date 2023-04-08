@@ -34,17 +34,17 @@ const Contacts = () => {
 
   return (
     <header className='prose prose-base text-center mb-5 px-1'>
-      <div className='btn-group  btn-group-horizontal'>
+      <div className='btn-group btn-group-horizontal'>
         {list.map(({ icon, ...rest }, inx) => {
           if (!rest.download) {
             return (
-              <a key={inx} className='btn btn-md md:btn-sm hover:btn-accent' {...rest}>
+              <a key={inx} className={`btn btn-ghost btn-md hover:btn-accent`} {...rest}>
                 {icon}
               </a>
             );
           } else {
             return (
-              <Link key={inx} className='btn btn-md md:btn-sm hover:btn-accent' {...rest}>
+              <Link key={inx} className={`btn btn-ghost btn-md hover:btn-accent`} {...rest}>
                 {icon}
               </Link>
             );
