@@ -23,7 +23,7 @@ const ThemeSwitch = () => {
   };
 
   return !mounted ? null : (
-    <div className='flex w-full justify-center md:justify-end gap-2'>
+    <div className='flex gap-2'>
       {theme !== 'dark' ? <MoonIcon /> : <SunIcon />}
       <input type='checkbox' onChange={toggleTheme} className='toggle toggle-sm' checked={theme === 'dark'} />
     </div>

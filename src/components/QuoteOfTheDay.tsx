@@ -5,7 +5,7 @@ import React from 'react';
 
 const QuoteOfTheDay = () => {
   return (
-    <div className='prose prose-base hidden md:block p-5'>
+    <div className='prose prose-sm hidden md:block pl-4 my-2'>
       <blockquote cite="That's Life Song by Frank Sinatra">
         That's life! <br /> That's what all the people say <br /> You're riding high in April, shot down in May <br />{' '}
         But I know I'm gonna change that tune <br /> When I'm back on top, back on top in June... <br />{' '}

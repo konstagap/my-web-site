@@ -60,9 +60,8 @@ const sections = [
 
 export default function ExperiencePage() {
   return (
-    <section className='prose prose-sm overflow-y-auto'>
+    <section className='prose prose-sm prose-p:m-0 md:prose-p:m-2 overflow-y-auto'>
       <IconsMarquee />
-
       <DowloadResume />
       {sections.map(({ name, time, points }) => (
         <div key={name}>
