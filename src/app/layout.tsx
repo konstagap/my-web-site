@@ -73,10 +73,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Provider>
           <div className='container mx-auto px-1 min-h-screen flex flex-col md:flex-row w-full'>
-            <aside className='mt-2 md:mt-12 md:basis-1/4'>
-              <Side />
-              <div className='hidden md:block'>
-                <ThemeSwitch />
+            <aside className='mt-2 md:mt-12 md:basis-1/4 relative'>
+              <div className='md:sticky md:top-5'>
+                <Side />
+                <div className='hidden md:block'>
+                  <ThemeSwitch />
+                </div>
               </div>
             </aside>
             <Divider />

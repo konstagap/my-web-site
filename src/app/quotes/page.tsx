@@ -28,7 +28,12 @@ const defaultQuote = {
 
 async function getQuote(): Promise<TQuote> {
   try {
-    const res = await fetch('http://quotes.rest/qod.json?category=inspire', { next: { revalidate: 60 * 60 } });
+    const res = await fetch('http://quotes.rest/qod.json?category=inspire', {
+      headers: {
+        'X-TheySaidSo-Api-Secret': process.env.TSS!,
+      },
+      next: { revalidate: 60 * 60 * 5 }, // every five hours
+    });
     if (!res.ok) return defaultQuote;
     const resp: TQuoteResp = await res.json();
     // to many request, limit reached
