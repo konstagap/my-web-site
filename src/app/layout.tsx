@@ -1,16 +1,15 @@
+import { Raleway } from 'next/font/google';
 import './globals.css';
-import { Roboto } from 'next/font/google';
 
-import Side from '@/components/Side';
 import Divider from '@/components/Divider';
 import Greeting from '@/components/Greeting';
-import { ScrollToTop } from '@/components/ScrollToTop';
-import Provider from '@/components/Provider';
 import Paper from '@/components/Paper';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import Provider from '@/components/Provider';
+import { ScrollToTop } from '@/components/ScrollToTop';
+import Side from '@/components/Side';
 import TabsList from '@/components/TabsList';
 
-const font = Roboto({ weight: ['300', '400', '500'], display: 'swap', subsets: ['latin'] });
+const font = Raleway({ weight: ['300', '400', '500'], display: 'swap', subsets: ['latin'] });
 
 export const metadata = {
   title: {
@@ -73,10 +72,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Provider>
           <div className='container mx-auto px-1 min-h-screen flex flex-col md:flex-row w-full'>
-            <aside className='mt-2 md:mt-12 md:basis-1/4'>
-              <Side />
-              <div className='hidden md:block'>
-                <ThemeSwitch />
+            <aside className='mt-2 md:mt-12 md:basis-1/4 relative'>
+              <div className='md:sticky md:top-5'>
+                <Side />
               </div>
             </aside>
             <Divider />

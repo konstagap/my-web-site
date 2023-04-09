@@ -33,25 +33,23 @@ const Contacts = () => {
   ];
 
   return (
-    <header className='prose prose-base text-center mb-5 px-1'>
-      <div className='btn-group btn-group-horizontal'>
-        {list.map(({ icon, ...rest }, inx) => {
-          if (!rest.download) {
-            return (
-              <a key={inx} className={`btn btn-ghost btn-md hover:btn-accent`} {...rest}>
-                {icon}
-              </a>
-            );
-          } else {
-            return (
-              <Link key={inx} className={`btn btn-ghost btn-md hover:btn-accent`} {...rest}>
-                {icon}
-              </Link>
-            );
-          }
-        })}
-      </div>
-    </header>
+    <div className=' w-full justify-center btn-group btn-group-horizontal'>
+      {list.map(({ icon, ...rest }, inx) => {
+        if (!rest.download) {
+          return (
+            <a key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-accent`} {...rest}>
+              {icon}
+            </a>
+          );
+        } else {
+          return (
+            <Link key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-accent`} {...rest}>
+              {icon}
+            </Link>
+          );
+        }
+      })}
+    </div>
   );
 };
 
