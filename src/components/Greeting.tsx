@@ -6,7 +6,7 @@ const Greeting = () => {
     <section>
       <pre data-prefix='$'>
         <code>
-          npm i create-react-app <NpmSpinner />
+          npx create-react-app <NpmSpinner />
         </code>
       </pre>
       <pre data-prefix='>'>
