@@ -49,23 +49,21 @@ export default async function QuotePage() {
 
   return (
     <div>
-      <div className='alert rounded-md mb-1'>
-        <div>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='stroke-current flex-shrink-0 h-6 w-6'
-            fill='none'
-            viewBox='0 0 24 24'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
-            />
-          </svg>
-          <span>You are up to date! Check back tomorrow for a new awesome quote!✌️</span>
-        </div>
+      <div className='alert'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          className='stroke-current shrink-0 h-6 w-6'
+          fill='none'
+          viewBox='0 0 24 24'
+        >
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth='2'
+            d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+          />
+        </svg>
+        <span>You are up to date! Check back tomorrow for a new awesome quote!✌️</span>
       </div>
       <div className='py-10 flex flex-wrap flex-col lg:flex-row gap-5 lg:justify-around min-h-fit rounded-md'>
         <div className='prose prose-sm md:max-w-sm'>

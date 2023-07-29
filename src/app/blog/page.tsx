@@ -3,7 +3,6 @@ import { Metadata } from 'next/types';
 
 import { compareDesc } from 'date-fns';
 import { allPosts } from 'contentlayer/generated';
-import MonoWidget from '@/components/MonoWidget';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -31,8 +30,6 @@ const HomePage = () => {
       {posts.map(post => (
         <PostPreview key={post._id} {...post} />
       ))}
-
-      <MonoWidget src='https://send.monobank.ua/widget.html?jar=4qhNrJKAwR3LRjLp6LXeL8Txd584HPQV&sendId=3DHfig8D2P&type=qrp&colorScheme=black' />
     </div>
   );
 };
