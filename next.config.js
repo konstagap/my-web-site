@@ -12,6 +12,7 @@ if (isGithubActions) {
 const nextConfig = {
   basePath: basePath,
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,17 +20,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  experimental: {
-    appDir: true,
-  },
-  headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: securityHeaders,
-      },
-    ];
   },
 };
 

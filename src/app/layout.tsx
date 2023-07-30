@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </aside>
             <Divider />
             <main className='md:mt-12 mx-2 md:mx-6 flex-1'>
-              <div className='mb-1 mockup-code'>
+              <div className='mb-3 mockup-code'>
                 <Greeting />
               </div>
               <Paper>
