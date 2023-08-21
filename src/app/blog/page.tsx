@@ -3,6 +3,7 @@ import { Metadata } from 'next/types';
 
 import { compareDesc } from 'date-fns';
 import { allPosts } from 'contentlayer/generated';
+import AnimationWrapper from '@/components/PageAnimation';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -26,11 +27,11 @@ const HomePage = () => {
   });
 
   return (
-    <div>
+    <AnimationWrapper>
       {posts.map(post => (
         <PostPreview key={post._id} {...post} />
       ))}
-    </div>
+    </AnimationWrapper>
   );
 };
 

@@ -13,6 +13,7 @@ import resortImg from '@/img/myCollection/1.jpg';
 import passportImg from '@/img/myCollection/auth.png';
 import landingImg from '@/img/myCollection/landing.png';
 import clickImg from '@/img/myCollection/click.png';
+import AnimationWrapper from '@/components/PageAnimation';
 // import video from '@/img/backgroundVideo/ManSittingOnaBench.mp4';
 
 export const metadata: Metadata = {
@@ -106,29 +107,30 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <section className='mt-5 flex flex-wrap gap-10 justify-center'>
-      <div className='alert shadow-lg'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          className='stroke-info shrink-0 w-6 h-6'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='2'
-            d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-          ></path>
-        </svg>
-        <div>
-          <div className='text-xs'>
-            Heroku links do not work, they have changed terms and conditions, re-deployment in process 🚀
+    <AnimationWrapper>
+      <section className='mt-5 flex flex-wrap gap-10 justify-center'>
+        <div className='alert shadow-lg'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            className='stroke-info shrink-0 w-6 h-6'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+            ></path>
+          </svg>
+          <div>
+            <div className='text-xs'>
+              Heroku links do not work, they have changed terms and conditions, re-deployment in process 🚀
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* 
+        {/* 
       TODO: video is not working
       <div className='card lg:card-side bg-base-100 shadow-xl'>
         <video autoPlay loop muted>
@@ -141,43 +143,44 @@ export default function ProjectsPage() {
         </div>
       </div>*/}
 
-      {projects.map(project => {
-        return (
-          <div key={project.name} className='card w-96 bg-base-100 shadow-xl'>
-            <figure className='m-0'>
-              <Image
-                src={project.img}
-                alt={project.name}
-                placeholder='blur'
-                style={{ objectFit: 'cover', maxHeight: '210px' }}
-              />
-            </figure>
-            <div className='card-body'>
-              <h2 className='card-title'>{project.name}</h2>
-              <p>{project.summary}</p>
-              <div className='card-actions justify-start flex items-center'>
-                <a
-                  className='btn btn-outline hover:btn-secondary basis-10'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                  href={project.gh}
-                >
-                  <GitHubIcon />
-                </a>
-                <a
-                  className='btn btn-ghost hover:btn-accent flex gap-2 items-center'
-                  rel='noopener noreferrer'
-                  target='_blank'
-                  href={project.deployed}
-                >
-                  <span>Deployed</span>
-                  <ArrowIcon />
-                </a>
+        {projects.map(project => {
+          return (
+            <div key={project.name} className='card w-96 bg-base-100 shadow-xl'>
+              <figure className='m-0'>
+                <Image
+                  src={project.img}
+                  alt={project.name}
+                  placeholder='blur'
+                  style={{ objectFit: 'cover', maxHeight: '210px' }}
+                />
+              </figure>
+              <div className='card-body'>
+                <h2 className='card-title'>{project.name}</h2>
+                <p>{project.summary}</p>
+                <div className='card-actions justify-start flex items-center'>
+                  <a
+                    className='btn btn-outline hover:btn-secondary basis-10'
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    href={project.gh}
+                  >
+                    <GitHubIcon />
+                  </a>
+                  <a
+                    className='btn btn-ghost hover:btn-accent flex gap-2 items-center'
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    href={project.deployed}
+                  >
+                    <span>Deployed</span>
+                    <ArrowIcon />
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
-    </section>
+          );
+        })}
+      </section>
+    </AnimationWrapper>
   );
 }

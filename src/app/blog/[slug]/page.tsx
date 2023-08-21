@@ -6,6 +6,7 @@ import { Metadata } from 'next/types';
 import React from 'react';
 import { formatRelative, subDays } from 'date-fns';
 import BackButton from '@/components/BackButton';
+import AnimationWrapper from '@/components/PageAnimation';
 
 type BlogPostProps = {
   params: {
@@ -55,13 +56,15 @@ const BlogPost = ({ params }: BlogPostProps) => {
   if (!post) notFound();
 
   return (
-    <section className='prose prose-sm prose-quoteless dark:prose-invert'>
-      <Balancer>
-        <h1>{post.title}</h1>
-        <time>{new Date(post.date).toDateString()}</time>
-        <Mdx code={post.body.code} />
-      </Balancer>
-    </section>
+    <AnimationWrapper>
+      <section className='prose prose-sm prose-quoteless dark:prose-invert'>
+        <Balancer>
+          <h1>{post.title}</h1>
+          <time>{new Date(post.date).toDateString()}</time>
+          <Mdx code={post.body.code} />
+        </Balancer>
+      </section>
+    </AnimationWrapper>
   );
 };
 

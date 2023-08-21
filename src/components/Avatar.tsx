@@ -20,6 +20,7 @@ import me15 from '@/img/me/me-removebg-preview-15.png';
 import me16 from '@/img/me/me-removebg-preview-16.png';
 import me17 from '@/img/me/me-removebg-preview-17.png';
 import me18 from '@/img/me/me-removebg-preview-18.png';
+import AnimationWrapper from './PageAnimation';
 
 const Avatar = () => {
   const [current, setCurrent] = useState(1);
@@ -38,7 +39,16 @@ const Avatar = () => {
         onClick={changeAvatar}
         className='md:mb-4 rounded-full ring shadow-lg shadow-yellow-500 ring-offset-base-100 w-24 sm:32 md:w-44 cursor-pointer'
       >
-        <Image autoSave='true' src={list[current]} priority placeholder='blur' alt='Kostas Agapov' />
+        <AnimationWrapper initial={{ y: -15, opacity: 0 }}>
+          <Image
+            autoSave='true'
+            src={list[current]}
+            className='rounded-full'
+            priority
+            placeholder='blur'
+            alt='Kostas Agapov'
+          />
+        </AnimationWrapper>
       </div>
     </div>
   );
