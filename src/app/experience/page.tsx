@@ -1,6 +1,7 @@
 import DowloadResume from '@/components/DowloadResume';
 import type { Metadata } from 'next';
 import IconsMarquee from '@/components/IconsMarquee';
+import AnimationWrapper from '@/components/PageAnimation';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -60,22 +61,24 @@ const sections = [
 
 export default function ExperiencePage() {
   return (
-    <section className='prose prose-sm prose-p:m-0 md:prose-p:m-2 overflow-y-auto'>
-      <IconsMarquee />
-      <DowloadResume />
-      {sections.map(({ name, time, points }) => (
-        <div key={name}>
-          <div className='flex w-full flex-col md:flex-row items-baseline justify-between'>
-            <p className='font-bold'>{name}</p>
-            <p>{time}</p>
+    <AnimationWrapper>
+      <section className='prose prose-sm prose-p:m-0 md:prose-p:m-2 overflow-y-auto'>
+        <IconsMarquee />
+        <DowloadResume />
+        {sections.map(({ name, time, points }) => (
+          <div key={name}>
+            <div className='flex w-full flex-col md:flex-row items-baseline justify-between'>
+              <p className='font-bold'>{name}</p>
+              <p>{time}</p>
+            </div>
+            <ul>
+              {points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
           </div>
-          <ul>
-            {points.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </section>
+        ))}
+      </section>
+    </AnimationWrapper>
   );
 }

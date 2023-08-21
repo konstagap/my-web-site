@@ -2,6 +2,7 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import defaultImg from '@/img/default-bg.jpg';
+import AnimationWrapper from '@/components/PageAnimation';
 
 type TQuote = {
   quote: string;
@@ -48,7 +49,7 @@ export default async function QuotePage() {
   const quote = await getQuote();
 
   return (
-    <div>
+    <AnimationWrapper>
       <div className='alert'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -97,6 +98,6 @@ export default async function QuotePage() {
           alt='Image for quote'
         />
       </div>
-    </div>
+    </AnimationWrapper>
   );
 }

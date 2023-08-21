@@ -1,6 +1,7 @@
 import Avatar from './Avatar';
 import Contacts from './Contacts';
 import Name from './Name';
+import AnimationWrapper from './PageAnimation';
 import QuoteOfTheDay from './QuoteOfTheDay';
 import ThemeSwitch from './ThemeSwitch';
 
@@ -11,11 +12,13 @@ const Side = () => {
         <Avatar />
         <Name />
       </div>
-      <Contacts />
-      <QuoteOfTheDay />
-      <div className='hidden md:flex w-full justify-end mt-2'>
-        <ThemeSwitch />
-      </div>
+      <AnimationWrapper initial={{ x: -15, opacity: 0 }}>
+        <Contacts />
+        <QuoteOfTheDay />
+        <div className='hidden md:flex w-full justify-end mt-2'>
+          <ThemeSwitch />
+        </div>
+      </AnimationWrapper>
     </div>
   );
 };
