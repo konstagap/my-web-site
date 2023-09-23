@@ -1,13 +1,13 @@
-import { ImageResponse } from '@vercel/og';
-import { NextRequest } from 'next/server';
+import { ImageResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 
 export const config = {
-  runtime: 'edge',
-};
+  runtime: 'edge'
+}
 
 export default async function handler(req: NextRequest) {
-  const { searchParams } = req.nextUrl;
-  let postTitle = searchParams.get('title') || 'San Diego, CA';
+  const { searchParams } = req.nextUrl
+  let postTitle = searchParams.get('title') || 'San Diego, CA'
 
   return new ImageResponse(
     (
@@ -24,7 +24,7 @@ export default async function handler(req: NextRequest) {
     ),
     {
       width: 1920,
-      height: 1080,
+      height: 1080
     }
-  );
+  )
 }
