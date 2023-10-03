@@ -26,8 +26,8 @@ const sections = [
     points: [
       'Migrate a large codebase from one technology stack to another.',
       'Write automated unit and integration tests for regression testing, including end-to-end tests.',
-      'Conducted manual testing on web, Android, and iOS platforms to identify and resolve issues.',
-      'Collaborated with cross-functional teams to ensure seamless integration of new technology stack.',
+      'Conduct manual testing on web, Android, and iOS platforms to identify and resolve issues.',
+      'Collaborate with cross-functional teams to ensure seamless integration of new technology stack.',
       'Develop and maintain technical documentation for software projects.',
       'Create reusable React components in TypeScript and create content with domain-specific language.',
       'Work with various front-end frameworks, including Next.js and backend Node.js servers.',
