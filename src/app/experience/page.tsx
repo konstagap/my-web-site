@@ -1,7 +1,7 @@
-import DowloadResume from '@/components/DowloadResume';
-import type { Metadata } from 'next';
-import IconsMarquee from '@/components/IconsMarquee';
-import AnimationWrapper from '@/components/PageAnimation';
+import DowloadResume from '@/components/DowloadResume'
+import type { Metadata } from 'next'
+import IconsMarquee from '@/components/IconsMarquee'
+import AnimationWrapper from '@/components/PageAnimation'
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -13,25 +13,26 @@ export const metadata: Metadata = {
     url: 'https://findkostas.com/experience',
     images: [
       {
-        url: 'https://findkostas.com/api/og?title=Experience',
-      },
-    ],
-  },
-};
+        url: 'https://findkostas.com/api/og?title=Experience'
+      }
+    ]
+  }
+}
 
 const sections = [
   {
     name: 'Intuit',
     time: 'November 2022',
     points: [
-      'Successfully migrated a large codebase from one technology stack to another.',
-      'Wrote multiple unit and integration tests in Java to ensure high code quality and stability.',
-      'Improved efficiency and accuracy of testing process by developing automation testing, including end-to-end tests.',
-      'Conducted manual testing on web, Android, and iOS platforms to identify and resolve issues.',
-      'Collaborated with cross-functional teams to ensure seamless integration of new technology stack.',
-      'Developed and maintained technical documentation for software projects.',
-      'Utilized TypeScript with React to build and maintain high-quality content for TurboTax, a leading tax preparation software.',
-    ],
+      'Migrate a large codebase from one technology stack to another.',
+      'Write automated unit and integration tests for regression testing, including end-to-end tests.',
+      'Conduct manual testing on web, Android, and iOS platforms to identify and resolve issues.',
+      'Collaborate with cross-functional teams to ensure seamless integration of new technology stack.',
+      'Develop and maintain technical documentation for software projects.',
+      'Create reusable React components in TypeScript and create content with domain-specific language.',
+      'Work with various front-end frameworks, including Next.js and backend Node.js servers.',
+      'Create UI assets, work with state management libraries and asynchronous code.'
+    ]
   },
   {
     name: 'LexisNexis Risk Solutions',
@@ -42,8 +43,8 @@ const sections = [
       "Create various data visualization tools such as charts, data tables, and maps, optimizing code to reduce re-rendering and minimizing 'prop drilling.'",
       'Build Node servers using Express.js, MySQL databases, Sequelize ORM, and vanilla SQL queries, along with other NPM packages such as Passport.js to secure routes, worker threads for heavy calculations, and more.',
       'Utilize Microsoft Verifiable Credentials for issuance and verification of digital credentials.',
-      'Implement custom themes, refactor legacy code, and work with browser APIs to persist session data.',
-    ],
+      'Implement custom themes, refactor legacy code, and work with browser APIs to persist session data.'
+    ]
   },
   {
     name: 'CSI WORKS',
@@ -54,10 +55,10 @@ const sections = [
       'Implement controlled forms with FORMIK, including input validation with error handling.',
       'Set up routing with React Router, including protecting private routes and implementing nested routing.',
       'Translate design wireframes into functional, cross-platform code.',
-      'Write unit tests using Jest and React Testing Library.',
-    ],
-  },
-];
+      'Write unit tests using Jest and React Testing Library.'
+    ]
+  }
+]
 
 export default function ExperiencePage() {
   return (
@@ -80,5 +81,5 @@ export default function ExperiencePage() {
         ))}
       </section>
     </AnimationWrapper>
-  );
+  )
 }
