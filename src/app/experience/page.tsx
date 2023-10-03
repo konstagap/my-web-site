@@ -28,7 +28,7 @@ const sections = [
       'Write automated unit and integration tests for regression testing, including end-to-end tests.',
       'Conducted manual testing on web, Android, and iOS platforms to identify and resolve issues.',
       'Collaborated with cross-functional teams to ensure seamless integration of new technology stack.',
-      'Developed and maintained technical documentation for software projects.',
+      'Develop and maintain technical documentation for software projects.',
       'Create reusable React components in TypeScript and create content with domain-specific language.',
       'Work with various front-end frameworks, including Next.js and backend Node.js servers.',
       'Create UI assets, work with state management libraries and asynchronous code.'
