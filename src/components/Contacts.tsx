@@ -6,12 +6,10 @@ import { DownloadIcon, EmailIcon, GitHubIcon, LinkedInIcon, PhoneIcon } from './
 const Contacts = () => {
   const list = [
     {
-      href: 'tel:+19292945554',
-      icon: <PhoneIcon />
-    },
-    {
-      href: 'mailto:konstagapov123@gmail.com',
-      icon: <EmailIcon />
+      href: 'https://github.com/konstagap',
+      rel: 'noopener noreferrer',
+      target: '_blank',
+      icon: <GitHubIcon />
     },
     {
       href: 'https://www.linkedin.com/in/kostiantyn-agapov',
@@ -20,10 +18,8 @@ const Contacts = () => {
       icon: <LinkedInIcon />
     },
     {
-      href: 'https://github.com/konstagap',
-      rel: 'noopener noreferrer',
-      target: '_blank',
-      icon: <GitHubIcon />
+      href: 'mailto:konstagapov123@gmail.com',
+      icon: <EmailIcon />
     },
     {
       href: '/cv/Kostiantyn_Agapov_cv.pdf',
