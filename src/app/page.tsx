@@ -8,18 +8,24 @@ export default function AboutPage() {
       <section className='prose pros-base'>
         <h3 className='my-5'>👋 Hi there, I'm Kostiantyn</h3>
         <p>
-          I'm a software engineer with over 4 years of experience in web development. My primary skills are in
-          TypeScript and JavaScript with React ecosystem, but I also have experience in the backend with Node.js and
-          testing frameworks.
+          I'm a software engineer who enjoys building reliable backend services and clean, intuitive frontend
+          experiences. I work across the stack with Spring Boot, Java 21, Kotlin, and React/TypeScript, and I love
+          creating software that feels fast, stable, and enjoyable to use.
         </p>
+
         <p>
-          I'm well-versed in Docker and Linux commands and am comfortable working in a variety of development
-          environments. In my free time, I enjoy exploring the outdoors and staying active. Hiking, soccer, and Formula
-          1 racing are some of my favorite hobbies.
+          My experience includes developing high-scale microservices, improving performance and observability, and
+          building reusable UI components and data-driven flows for large enterprise applications. I care about writing
+          maintainable code, solving complex problems, and making life easier for both users and fellow engineers.
         </p>
+
         <p>
-          Thanks for taking the time to learn a bit about me. If you have any questions or would like to chat further,
-          feel free to reach out!
+          Outside of work, I`m usually outdoors or staying active. Hiking, soccer, and Formula 1 keep me energized and
+          inspired.
+        </p>
+
+        <p>
+          Thanks for stopping by — always happy to connect or chat about engineering, projects, or anything in between.
         </p>
 
         {/* <hr /> */}

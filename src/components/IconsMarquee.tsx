@@ -1,10 +1,18 @@
 import React from 'react';
 
-const skills = [
+export const skills = [
   'HTML5',
   'CSS',
   'JSX',
   'TSX',
+  'Java',
+  'Kotlin',
+  'Spring Boot',
+  'Coroutines',
+  'Servlet',
+  'WebFlux',
+  'Gatling',
+  'Splunk',
   'MUI',
   'Ant Design',
   'Tailwind',

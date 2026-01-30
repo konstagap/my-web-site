@@ -1,7 +1,7 @@
-import DowloadResume from '@/components/DowloadResume'
-import type { Metadata } from 'next'
-import IconsMarquee from '@/components/IconsMarquee'
-import AnimationWrapper from '@/components/PageAnimation'
+import DowloadResume from '@/components/DowloadResume';
+import type { Metadata } from 'next';
+import IconsMarquee, { skills } from '@/components/IconsMarquee';
+import AnimationWrapper from '@/components/PageAnimation';
 
 export const metadata: Metadata = {
   title: 'Skills',
@@ -13,52 +13,59 @@ export const metadata: Metadata = {
     url: 'https://findkostas.com/experience',
     images: [
       {
-        url: 'https://findkostas.com/api/og?title=Experience'
-      }
-    ]
-  }
-}
+        url: 'https://findkostas.com/api/og?title=Experience',
+      },
+    ],
+  },
+  keywords: [...skills],
+};
 
 const sections = [
   {
-    name: 'Intuit',
-    time: 'November 2022',
+    name: 'Intuit (Full-time)',
+    time: 'Nov 2023 - Present',
     points: [
-      'Migrate a large codebase from one technology stack to another.',
-      'Write automated unit and integration tests for regression testing, including end-to-end tests.',
-      'Conduct manual testing on web, Android, and iOS platforms to identify and resolve issues.',
-      'Collaborate with cross-functional teams to ensure seamless integration of new technology stack.',
-      'Develop and maintain technical documentation for software projects.',
-      'Create reusable React components in TypeScript and create content with domain-specific language.',
-      'Work with various front-end frameworks, including Next.js and backend Node.js servers.',
-      'Create UI assets, work with state management libraries and asynchronous code.'
-    ]
+      'Develop and maintain high-traffic Spring Boot microservices powering TurboTax, using Java 21 and Kotlin Coroutines across both Servlet and Reactive (WebFlux) environments.',
+      'Engineer a high-performance algorithm to calculate tax return completion status, enabling real-time progress tracking and data-driven insights for millions of users.',
+      'Deliver mission-critical API endpoints supporting the "Calculation on Completion" feature, directly improving accuracy and speed of the tax-filing experience.',
+      'Author and execute complex Gatling load-testing scripts to simulate peak-season traffic, identify bottlenecks, and ensure system stability under load.',
+      'Establish comprehensive Splunk observability dashboards and proactive alerting systems, significantly reducing Mean Time to Detection by identifying anomalies before customer impact.',
+      'Develop customer-facing TurboTax Online UI components that guide users through unreviewed or incomplete tax topics in federal and final review.',
+    ],
+  },
+  {
+    name: 'Intuit (Contract)',
+    time: 'Oct 2022 - Nov 2023',
+    points: [
+      'Lead the migration of a large-scale codebase to a modern technology stack through cross-functional collaboration and robust version control.',
+      'Develop reusable, type-safe React components in TypeScript and manage complex application state to improve UI consistency and developer velocity.',
+      'Implement comprehensive testing strategies including automated unit, integration, and end-to-end (E2E) tests to prevent regressions.',
+      'Conduct manual and automated testing across Web, Android, and iOS platforms to ensure high-quality delivery across the ecosystem.',
+      'Author and maintain technical documentation to streamline developer onboarding and enhance project scalability.',
+    ],
   },
   {
     name: 'LexisNexis Risk Solutions',
-    time: 'May 2021 - November 2022',
+    time: 'May 2021 - Oct 2022',
     points: [
-      'Develop React applications, including organizing global state stores using Redux or React Context, creating and utilizing custom hooks, implementing client-side routing, and building custom authentication with JWT or Microsoft auth libraries.',
-      'Customize user interfaces using UI libraries like MUI, Ant Design, and Bootstrap, and CSS, creating reusable components for consistency and responsiveness across all devices.',
-      "Create various data visualization tools such as charts, data tables, and maps, optimizing code to reduce re-rendering and minimizing 'prop drilling.'",
-      'Build Node servers using Express.js, MySQL databases, Sequelize ORM, and vanilla SQL queries, along with other NPM packages such as Passport.js to secure routes, worker threads for heavy calculations, and more.',
-      'Utilize Microsoft Verifiable Credentials for issuance and verification of digital credentials.',
-      'Implement custom themes, refactor legacy code, and work with browser APIs to persist session data.'
-    ]
+      'Build full-stack Node.js applications using Express, MySQL, and Sequelize, securing routes with Passport.js and JWT.',
+      'Engineer complex data visualization tools including interactive charts and maps, optimized to reduce unnecessary re-renders.',
+      'Implement digital credentialing using Microsoft Verifiable Credentials and custom authentication libraries.',
+      'Refactor legacy codebases and utilize worker threads for heavy backend computations to improve system efficiency and response times.',
+    ],
   },
   {
     name: 'CSI WORKS',
     time: 'September 2019 - May 2021',
     points: [
-      'Develop reusable components in React, utilizing hooks, calling backend APIs, and listening to DOM events. Optimize performance by breaking down components into smaller parts and memorizing them.',
-      'Use Styled Components and UI libraries for styling and prototyping.',
-      'Implement controlled forms with FORMIK, including input validation with error handling.',
-      'Set up routing with React Router, including protecting private routes and implementing nested routing.',
-      'Translate design wireframes into functional, cross-platform code.',
-      'Write unit tests using Jest and React Testing Library.'
-    ]
-  }
-]
+      'Translate complex wireframes into functional, cross-platform UI using React and Styled Components.',
+      'Develop controlled forms with Formik, implementing rigorous input validation and sophisticated error handling.',
+      'Manage application flow using React Router with protected and nested routing, optimizing performance through component memoization.',
+      'Build reusable React components and ensure consistent UI behavior across the application.',
+      'Collaborate with designers and backend teams to deliver polished, production-ready features.',
+    ],
+  },
+];
 
 export default function ExperiencePage() {
   return (
@@ -81,5 +88,5 @@ export default function ExperiencePage() {
         ))}
       </section>
     </AnimationWrapper>
-  )
+  );
 }
