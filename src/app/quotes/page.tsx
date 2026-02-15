@@ -28,18 +28,20 @@ function QuoteBlock({ quote, author }: { quote: string; author: string }) {
   const lines = quote.split('\n').filter(Boolean);
 
   return (
-    <blockquote className='prose prose-sm md:max-w-sm'>
-      <div className='space-y-2'>
-        {lines.map((line, idx) => (
-          <p key={`line-${idx}-${line.substring(0, 10)}`} className='m-0'>
-            {line}
-          </p>
-        ))}
-      </div>
-      <footer className='text-right mt-4'>
-        <cite className='not-italic font-semibold'>— {author}</cite>
-      </footer>
-    </blockquote>
+    <div className='prose prose-sm'>
+      <blockquote className='md:max-w-sm'>
+        <div className='space-y-2'>
+          {lines.map((line, idx) => (
+            <p key={`line-${idx}-${line.substring(0, 10)}`} className='m-0'>
+              {line}
+            </p>
+          ))}
+        </div>
+        <footer className='text-right mt-4'>
+          <cite className='not-italic font-semibold'>— {author}</cite>
+        </footer>
+      </blockquote>
+    </div>
   );
 }
 
@@ -86,9 +88,9 @@ export default async function QuotePage() {
       <div className='alert'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
-          className='stroke-current shrink-0 h-6 w-6'
           fill='none'
           viewBox='0 0 24 24'
+          className='stroke-success shrink-0 w-6 h-6'
         >
           <path
             strokeLinecap='round'

@@ -19,6 +19,11 @@ const nextConfig = {
         hostname: 'theysaidso.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        pathname: '/**',
+      },
     ],
   },
   async headers() {

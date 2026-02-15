@@ -36,12 +36,12 @@ export default function AboutPage() {
             target='_blank'
             href='https://www.linkedin.com/in/kostiantyn-agapov'
           >
-            <button className='btn btn-outline hover:btn-accent w-full md:btn-wide'>
+            <button className='btn btn-outline hover:btn-primary w-full md:btn-wide'>
               <LinkedInIcon />
             </button>
           </a>
           <a className='flex-1' rel='noopener noreferrer' target='_blank' href='https://github.com/konstagap'>
-            <button className='btn btn-outline hover:btn-accent w-full md:btn-wide'>
+            <button className='btn btn-outline hover:btn-primary w-full md:btn-wide'>
               <GitHubIcon />
             </button>
           </a>
