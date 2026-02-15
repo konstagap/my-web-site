@@ -24,33 +24,5 @@ module.exports = {
     prefix: '',
     themes: ['light', 'dark'],
   },
-  plugins: [
-    require('tailwind-typewriter')({
-      wordsets: {
-        fruit: {
-          words: [
-            'Hello 👋',
-            'Ciao',
-            'Bonjour',
-            'Willkommen',
-            'Hallå',
-            'Hola',
-            'Здраво',
-            'Ahoj',
-            'Merhaba',
-            `Привіт!`,
-            'Cześć',
-            '欢迎',
-            'नमस्ते',
-            'ようこそ',
-            'שלום',
-            'Sawubona',
-          ],
-          delay: 2,
-        },
-      },
-    }),
-    require('@tailwindcss/typography'),
-    require('daisyui'),
-  ],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
