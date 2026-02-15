@@ -1,16 +1,22 @@
 import React from 'react';
 import NpmSpinner from './NpmSpinner';
+import TypeWriter from './TypeWriter';
 
 const Greeting = () => {
   return (
     <section>
-      <pre data-prefix='$'>
+      <pre data-prefix='>'>
+        <code>npx create-next-app@latest</code>
+      </pre>
+      <pre data-prefix='>'>
         <code>
-          npx create-react-app <NpmSpinner />
+          <NpmSpinner />
         </code>
       </pre>
       <pre data-prefix='>'>
-        <code className='type-fruit'></code>
+        <code>
+          <TypeWriter />
+        </code>
       </pre>
     </section>
   );
