@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                 <p>{project.summary}</p>
                 <div className='card-actions justify-start flex items-center'>
                   <a
-                    className='btn btn-outline hover:btn-secondary basis-10'
+                    className='btn btn-outline hover:btn-primary basis-10'
                     rel='noopener noreferrer'
                     target='_blank'
                     href={project.gh}
@@ -167,7 +167,7 @@ export default function ProjectsPage() {
                     <GitHubIcon />
                   </a>
                   <a
-                    className='btn btn-ghost hover:btn-accent flex gap-2 items-center'
+                    className='btn btn-ghost hover:btn-secondary flex gap-2 items-center'
                     rel='noopener noreferrer'
                     target='_blank'
                     href={project.deployed}

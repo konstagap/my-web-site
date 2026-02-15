@@ -132,13 +132,13 @@ function Carousel({ images }: CarouselProps) {
             <div className='absolute flex justify-between transform -translate-y-1/2 left-2 right-2 top-1/2'>
               <a
                 href={'#' + prevId}
-                className={`btn btn-accent md:opacity-60 md:hover:opacity-100 btn-circle ${isFirst ? 'invisible' : ''}`}
+                className={`btn btn-primary md:opacity-60 md:hover:opacity-100 btn-circle ${isFirst ? 'invisible' : ''}`}
               >
                 ❮
               </a>
               <a
                 href={'#' + nextId}
-                className={`btn btn-accent md:opacity-60 md:hover:opacity-100 btn-circle ${isLast ? 'invisible' : ''}`}
+                className={`btn btn-primary md:opacity-60 md:hover:opacity-100 btn-circle ${isLast ? 'invisible' : ''}`}
               >
                 ❯
               </a>

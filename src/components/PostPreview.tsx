@@ -10,7 +10,7 @@ const PostPreview = ({ slug, summary, date, title, tags }: Post) => {
         <p>{summary}</p>
         <time>{new Date(date).toDateString()}</time>
         <div className='card-actions justify-end'>
-          <Link className='btn btn-ghost btn-sm' href={`/blog/${slug}`}>
+          <Link className='btn btn-primary btn-sm' href={`/blog/${slug}`}>
             click to read
           </Link>
         </div>
