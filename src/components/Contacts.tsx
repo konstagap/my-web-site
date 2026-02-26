@@ -35,13 +35,13 @@ const Contacts = () => {
       {list.map(({ icon, ...rest }, inx) => {
         if (!rest.download) {
           return (
-            <a key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-primary`} {...rest}>
+            <a key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-info`} {...rest}>
               {icon}
             </a>
           );
         } else {
           return (
-            <Link key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-primary`} {...rest}>
+            <Link key={inx} className={`btn btn-ghost btn-sm md:btn-md hover:btn-info`} {...rest}>
               {icon}
             </Link>
           );
